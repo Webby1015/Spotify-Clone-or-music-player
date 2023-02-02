@@ -17,12 +17,47 @@ nav{
 }
 
 nav ul{
+    align-items: center;
     display: flex;
     list-style-type: none;
     height: 65px;
     background-color: black;
+    color:white
+
+}
+
+nav ul li{
+    padding: 0 12px;
 }
 
 .brand img{
-    
+    width: 44px;
+    padding: 0 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container {
+    font-family: 'Ubuntu',sans-serif;
+    font-size: .5rem;
+    min-height: 80vh;
+}
+
+.bottom {
+    position:sticky;
+    height: 130px;
+    background-color: black;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#songprogress{
+    width: 90vh;
 }
