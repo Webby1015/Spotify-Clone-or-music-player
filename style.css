@@ -57,7 +57,6 @@ nav ul li{
     border-radius: 13px;
     padding: 24px;
     background-image: url("Cover.jpg");
-    background-image: fit;
 }
 
 .bottom {
@@ -93,3 +92,6 @@ nav ul li{
 }
 
 
+.SonglistItems {
+    padding: 24px;
+}
