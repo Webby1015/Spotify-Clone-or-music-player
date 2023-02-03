@@ -92,6 +92,23 @@ nav ul li{
 }
 
 
-.SonglistItems {
-    padding: 24px;
+.SongItems {
+    background-color: white;
+    color: black;
+    width: 70vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 24px;
+    margin-top: 10px;
 }
+
+.SongItems img{
+    height: 30px;
+    border-radius: 34px;
+}
+
+.songListPlay i{
+    cursor: pointer;
+}
+
