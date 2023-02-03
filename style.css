@@ -45,9 +45,19 @@ nav ul li{
 }
 
 .container {
-    font-family:  Roboto;
+    
+    font-family: Roboto;
     font-size: .5rem;
-    min-height: 80vh;
+    min-height: 62vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 13px;
+    padding: 24px;
+    background-image: url("Cover.jpg");
+    background-image: fit;
 }
 
 .bottom {
@@ -72,6 +82,10 @@ nav ul li{
 .icons i{
     padding: 10px;
     cursor: pointer;
+}
+
+.cover{
+    size: 30px;
 }
 
 #songprogress{
