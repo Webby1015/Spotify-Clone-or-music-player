@@ -1,1 +1,8 @@
 font-family: 'Ubuntu',sans-serif;
+
+let play = document.getElementById("play")
+    function playMusic(){
+        let audio = new Audio("sources\\Songs\\DreamOn.mp3");
+        audio.play()
+    }
+    play.addEventListener("click",playMusic);

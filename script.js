@@ -7,23 +7,15 @@ let songs = [
     {songname:"Stairway To Heaven - Led Z",filepath:"sources\\Songs\\Stairway to Heaven.mp3",coverpath:"sources\\covers\\Stairway.jpeg"},
     {songname:"Sweater Weather - The Neighbourhood",filepath:"sources\\Songs\\Sweater Weather.mp3",coverpath:"sources\\covers\\sweaterweather.jpeg"},
     {songname:"Sweet Child O' Mine - Guns N' Roses",filepath:"sources\\Songs\\Sweet Child O' Mine.mp3",coverpath:"sources\\covers\\sweet.jpeg"}
-]
-    let playing=
-    function playmusic(){
+]   
+    let playing=false
+    let play = document.getElementById("play")
+    function playMusic(){
 
-        let audio = new Audio("sources\\Songs\\DreamOn.mp3");
-        audio.play()
-
+        let audio = new Audio(path);
+        if(playing==false){
+        audio.play();
+        playing =true
+        }
     }
-
-    function nextmusic(){
-
-
-
-    }
-
-    function previousmusic(){
-
-
-    
-    }
+    play.addEventListener("click",playMusic);
