@@ -100,13 +100,14 @@ nav ul li{
 .SongItems {
     background-color: white;
     color: black;
-    width: 55vh;
+    width: 50vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 30px;
     margin-top: 20px;
-    padding: px;
+    padding: 1px;
+    margin-left: 150px;
 }
 
 .SongItems img{
@@ -135,3 +136,13 @@ nav ul li{
     transition: ease-in 2s;
 }
 
+.play{
+    padding: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.title {
+    margin-left: 250px;
+}

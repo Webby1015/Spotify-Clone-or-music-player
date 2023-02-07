@@ -1,4 +1,8 @@
 console.log("WElcome To Spotify")
+let songIndex =0;
+
+let masterPlay = document.getElementById('MasterPlay')
+let myprogressbar = document.getElementById('songprogress')
 let songs = [
     {songname:"Dream on - Aerosmith",filepath:"sources\\Songs\\DreamOn.mp3",coverpath:"sources\\covers\\DreamOn.jpeg"},
     {songname:"Good Riddance - Green Day",filepath:"sources\\Songs\\GoodRiddance.mp3",coverpath:"sources\\covers\\goodridance.jpeg"},
@@ -8,14 +12,14 @@ let songs = [
     {songname:"Sweater Weather - The Neighbourhood",filepath:"sources\\Songs\\Sweater Weather.mp3",coverpath:"sources\\covers\\sweaterweather.jpeg"},
     {songname:"Sweet Child O' Mine - Guns N' Roses",filepath:"sources\\Songs\\Sweet Child O' Mine.mp3",coverpath:"sources\\covers\\sweet.jpeg"}
 ]   
-    let playing=false
-    let play = document.getElementById("play")
-    function playMusic(){
-
-        let audio = new Audio(path);
-        if(playing==false){
-        audio.play();
-        playing =true
-        }
+let audioElement= new Audio ("sources\\Songs\\DreamOn.mp3")
+// handle play pause
+masterPlay.addEventListener('click',()=>{
+    if(audioElement.paused || audioElement.currentTime<=0){
+        audioElement.play()
     }
-    play.addEventListener("click",playMusic);
+})  
+myprogressbar.addEventListener('timeupdate',()=>{
+    console.log('timeupdate')
+
+})
