@@ -108,6 +108,7 @@ nav ul li{
     margin-top: 20px;
     padding: 1px;
     margin-left: 150px;
+    cursor: pointer;
 }
 
 .SongItems img{
