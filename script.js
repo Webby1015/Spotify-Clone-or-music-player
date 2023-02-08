@@ -2,9 +2,13 @@ console.log("WElcome To Spotify")
 let songIndex =0;
 let songinfo= document.getElementsByClassName('songInfo')
 let masterPlay = document.getElementById('MasterPlay')
+let forward = document.getElementById('forward')
+let backward = document.getElementById('backward')
+
 let myprogressbar = document.getElementById('songprogress')
+
 let songs = [
-    {songname:"Dream on - Aerosmith",filepath:"sources\\Songs\\DreamOn.mp3",coverpath:"sources\\covers\\DreamOn.jpeg"},
+    {songname:"Dream on - Aerosmith",filepath:"sources/Songs/DreamOn.mp3",coverpath:"sources\\covers\\DreamOn.jpeg"},
     {songname:"Good Riddance - Green Day",filepath:"sources\\Songs\\GoodRiddance.mp3",coverpath:"sources\\covers\\goodridance.jpeg"},
     {songname:"Hotel California - Eagles",filepath:"sources\\Songs\\HotelCalifornia.mp3",coverpath:"sources\\covers\\hotel.jpeg"},
     {songname:"Knockin on.. - Gun N' Roses",filepath:"sources\\Songs\\KnockinOnHeavensDoor.mp3",coverpath:"sources\\covers\\Knockin.jpeg"},
@@ -12,7 +16,12 @@ let songs = [
     {songname:"Sweater Weather - The Neighbourhood",filepath:"sources\\Songs\\Sweater Weather.mp3",coverpath:"sources\\covers\\sweaterweather.jpeg"},
     {songname:"Sweet Child O' Mine - Guns N' Roses",filepath:"sources\\Songs\\Sweet Child O' Mine.mp3",coverpath:"sources\\covers\\sweet.jpeg"}
 ]   
-let audioElement= new Audio ("sources\\Songs\\DreamOn.mp3")
+
+let songpath = songs[songIndex]['filepath']
+let coverpath =songs[songIndex]['coverpath']
+let songname = songs[songIndex]['songname']
+console.log(songname)
+let audioElement= new Audio (songpath)
 // handle play pause
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
