@@ -1,6 +1,6 @@
 console.log("WElcome To Spotify")
 let songIndex =0;
-
+let songinfo= document.getElementsByClassName('songInfo')
 let masterPlay = document.getElementById('MasterPlay')
 let myprogressbar = document.getElementById('songprogress')
 let songs = [
@@ -16,10 +16,26 @@ let audioElement= new Audio ("sources\\Songs\\DreamOn.mp3")
 // handle play pause
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
-        audioElement.play()
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle')
+        masterPlay.classList.add('fa-pause-circle')
     }
-})  
-myprogressbar.addEventListener('timeupdate',()=>{
-    console.log('timeupdate')
+    else{
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle')
+        masterPlay.classList.add('fa-play-circle')
 
+    }
+
+})  
+
+audioElement.addEventListener('timeupdate',()=>{
+
+    let progress = parseInt((audioElement.currentTime/audioElement.duration)*100)
+    myprogressbar.value=progress
+
+})
+
+myprogressbar.addEventListener('change',()=>{
+    audioElement.currentTime= (myprogressbar.value*audioElement.duration)/100
 })

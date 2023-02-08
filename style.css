@@ -127,12 +127,13 @@ nav ul li{
     position: absolute;
     left: 0;
     margin-left: 30px;
+    opacity: 1;
 }
 
 .songInfo img{
     height: 60px;
     margin: 20px;
-    opacity: 1;
+    
     transition: ease-in 2s;
 }
 
