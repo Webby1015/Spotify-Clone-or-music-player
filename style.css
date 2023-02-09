@@ -148,3 +148,6 @@ nav ul li{
 .title {
     margin-left: 250px;
 }
+.songname{
+    font-weight: bold;
+}

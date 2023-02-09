@@ -4,9 +4,9 @@ let songinfo= document.getElementsByClassName('songInfo')
 let masterPlay = document.getElementById('MasterPlay')
 let forward = document.getElementById('forward')
 let backward = document.getElementById('backward')
-let songitem = document.getElementById('SongItems')
+let songitem = Array.from( document.getElementsByClassName('SongItems'))
 let myprogressbar = document.getElementById('songprogress')
-
+console.log(songitem)
 let songs = [
     {songname:"Dream on - Aerosmith",filepath:"sources/Songs/DreamOn.mp3",coverpath:"sources/covers/DreamOn.jpeg"},
     {songname:"Good Riddance - Green Day",filepath:"sources/Songs/GoodRiddance.mp3",coverpath:"sources/covers/goodridance.jpeg"},
@@ -17,11 +17,13 @@ let songs = [
     {songname:"Sweet Child O' Mine - Guns N' Roses",filepath:"sources/Songs/Sweet Child O' Mine.mp3",coverpath:"sources/covers/sweet.jpeg"}
 ]   
 
-let songpath = songs[songIndex]['filepath']
-let coverpath =songs[songIndex]['coverpath']
-let songname = songs[songIndex]['songname']
-console.log(songname)
-let audioElement= new Audio (songpath)
+songitem.forEach((Element,Index)=>{
+    console.log(Element,Index)
+    Element.getElementsByTagName("img")[0].src=songs[Index].coverpath;
+    Element.getElementsByClassName("songname")[0].innerText = songs[Index].songname;
+})
+
+let audioElement= new Audio ('sources/Songs/DreamOn.mp3')
 // handle play pause
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
