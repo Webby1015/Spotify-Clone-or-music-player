@@ -6,6 +6,9 @@ let forward = document.getElementById('forward')
 let backward = document.getElementById('backward')
 let songitem = Array.from( document.getElementsByClassName('SongItems'))
 let myprogressbar = document.getElementById('songprogress')
+let mastername = document.getElementById('mastername')
+let mastercover = document.getElementById('playingimg')
+
 console.log(songitem)
 let songs = [
     {songname:"Dream on - Aerosmith",filepath:"sources/Songs/DreamOn.mp3",coverpath:"sources/covers/DreamOn.jpeg"},
@@ -49,4 +52,43 @@ audioElement.addEventListener('timeupdate',()=>{
 
 myprogressbar.addEventListener('change',()=>{
     audioElement.currentTime= (myprogressbar.value*audioElement.duration)/100
+})
+
+songitem.forEach((Element,i)=>{
+    Element.addEventListener('click',(e)=>{
+        console.log(Element,i)
+        songIndex=i
+        audioElement.src=songs[songIndex]['filepath']
+        audioElement.currentTime=0;
+        audioElement.play(); 
+    })
+    
+})
+
+document.getElementById('forward').addEventListener('click',()=>{
+    if(songIndex>=6){
+        songIndex = 0
+    }
+    else{
+        songIndex+=1
+    }
+    mastercover.src=songs[songIndex]['coverpath']
+    mastername.innerText=songs[songIndex]['songname']
+    audioElement.src=songs[songIndex]['filepath']
+    audioElement.currentTime=0;
+    audioElement.play(); 
+})
+
+document.getElementById('backward').addEventListener('click',()=>{
+    if(songIndex<=0){
+        songIndex =6 
+    }
+    else{
+        songIndex-=1
+    }
+    mastercover.src=songs[songIndex]['coverpath']
+    mastername.innerText=songs[songIndex]['songname']
+    audioElement.src=songs[songIndex]['filepath']
+    audioElement.currentTime=0;
+    audioElement.play(); 
 })
