@@ -91,4 +91,4 @@ document.getElementById('backward').addEventListener('click',()=>{
     audioElement.src=songs[songIndex]['filepath']
     audioElement.currentTime=0;
     audioElement.play(); 
-})
+}) 
